@@ -1,4 +1,7 @@
 // @ts-check
+// susikurti homework branch'a
+// npm install
+// nmp test
 const { test, expect } = require('@playwright/test');
 
 const data = [
