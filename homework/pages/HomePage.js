@@ -12,8 +12,8 @@ class HomePage {
         await this.page.selectOption('#selectBuild', { label: version});
     }
     async selectNumbers(first, second) {
-        await this.page.locator('#number1Field').type(first);
-        await this.page.locator('#number2Field').type(second);
+        await this.page.locator('#number1Field').type(`${first}`);
+        await this.page.locator('#number2Field').type(`${second}`);
     }
     async selectLabel(label) {
         await this.page.selectOption('#selectOperationDropdown', {label: label});
@@ -22,7 +22,7 @@ class HomePage {
         await this.page.locator('#calculateButton').click();
     }
     async expectedResult(expvalue) {
-        return await expect(this.page.locator('#numberAnswerField')).toHaveValue(expvalue);
+        return await expect(this.page.locator('#numberAnswerField')).toHaveValue(`${expvalue}`);
     }
     async integersOnly() {
         await this.page.locator('#integerSelect').click();
